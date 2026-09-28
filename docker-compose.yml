@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:16
+    container_name: quicklink_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: quicklink_user
+      POSTGRES_PASSWORD: local_dev_password
+      POSTGRES_DB: quicklink_db
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U quicklink_user -d quicklink_db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: .
+    container_name: quicklink_backend
+    restart: unless-stopped
+
+    ports:
+      - "8001:8001"
+
+    environment:
+      DATABASE_URL: postgresql+psycopg://quicklink_user:local_dev_password@db:5432/quicklink_db
+      BASE_URL: http://127.0.0.1:8001
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

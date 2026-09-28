@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickLink | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">QuickLink</a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="dashboard.html" class="nav-link active">
+                Dashboard
+            </a>
+        </nav>
+
+        <div class="nav-text">Simple. Fast. Reliable.</div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- DASHBOARD HEADER -->
+        <section class="dashboard">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <h1>Your Dashboard</h1>
+
+                    <p>
+                        Manage and track your shortened links.
+                    </p>
+                </div>
+
+                <button id="refresh-btn" type="button">
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="stats-overview">
+
+                <!-- TOTAL LINKS -->
+                <div class="stat-card">
+
+                    <div class="stat-card-header">
+                        <h3>Total Links</h3>
+
+                        <span class="stat-icon">
+                            <i class="icon-placeholder">#</i>
+                        </span>
+                    </div>
+
+                    <p class="stat-value" id="total-urls">
+                        0
+                    </p>
+
+                    <p class="stat-description">
+                        Total shortened URLs
+                    </p>
+
+                </div>
+
+
+                <!-- TOTAL CLICKS -->
+                <div class="stat-card">
+
+                    <div class="stat-card-header">
+                        <h3>Total Clicks</h3>
+
+                        <span class="stat-icon">
+                            <i class="icon-placeholder">↗</i>
+                        </span>
+                    </div>
+
+                    <p class="stat-value" id="total-clicks">
+                        0
+                    </p>
+
+                    <p class="stat-description">
+                        Combined clicks across all links
+                    </p>
+
+                </div>
+
+
+                <!-- MOST CLICKED -->
+                <div class="stat-card">
+
+                    <div class="stat-card-header">
+                        <h3>Most Clicked</h3>
+
+                        <span class="stat-icon">
+                            <i class="icon-placeholder">★</i>
+                        </span>
+                    </div>
+
+                    <p class="stat-value" id="most-clicked-count">
+                        0
+                    </p>
+
+                    <p class="stat-description" id="most-clicked-url">
+                        No clicks yet
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- URL MANAGEMENT -->
+            <section class="url-management">
+
+                <div class="url-management-header">
+
+                    <div>
+                        <h2>Your Links</h2>
+
+                        <p>
+                            Search, copy, and delete your links.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="search-container">
+
+                    <input type="search" id="search-input" placeholder="Search by original URL or short code..."
+                        aria-label="Search shortened URLs">
+
+                </div>
+
+
+                <!-- DASHBOARD ERROR -->
+                <p id="dashboard-error" class="error-message hidden" role="alert"></p>
+
+
+                <!-- URL TABLE -->
+                <div class="table-container">
+
+                    <table class="url-table">
+
+                        <thead>
+                            <tr>
+                                <th>Original URL</th>
+                                <th>Short URL</th>
+                                <th>Clicks</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="url-list">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            QuickLink &copy; 2026 | Built with FastAPI
+        </p>
+    </footer>
+
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

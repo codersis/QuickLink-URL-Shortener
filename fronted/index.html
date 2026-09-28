@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickLink | URL Shortener</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">QuickLink</a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+        </nav>
+
+        <div class="nav-text">Simple. Fast. Reliable.</div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1>Make your links shorter.</h1>
+
+            <p>
+                Transform long URLs into short, shareable links
+                in seconds.
+            </p>
+        </section>
+
+
+        <!-- URL SHORTENER -->
+        <section class="shortener-card">
+
+            <h2>Shorten your URL</h2>
+
+            <form id="shorten-form">
+
+                <label for="url-input">
+                    Enter your long URL
+                </label>
+
+                <div class="input-group">
+
+                    <input type="url" id="url-input" placeholder="https://example.com/your-long-url" required>
+
+                    <button type="submit" id="shorten-btn">
+                        Shorten URL
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- SHORTENED URL RESULT -->
+            <div id="result" class="result hidden">
+
+                <p>Your shortened URL is ready!</p>
+
+                <div class="result-group">
+
+                    <a id="short-url" href="#" target="_blank" rel="noopener noreferrer"></a>
+
+                    <button id="copy-btn" type="button">
+                        Copy
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ERROR MESSAGE -->
+            <p id="error-message" class="error-message hidden" role="alert"></p>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="features">
+
+            <div class="feature-card">
+                <h3>Fast & Simple</h3>
+
+                <p>
+                    Shorten long links with just one click.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Track Clicks</h3>
+
+                <p>
+                    Keep track of how often your links are used.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Easy to Share</h3>
+
+                <p>
+                    Copy and share your shortened links anywhere.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            QuickLink &copy; 2026 | Built with FastAPI
+        </p>
+    </footer>
+
+
+    <!-- HOME PAGE JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
