@@ -19,7 +19,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://quick-link-url-shortener-xw4k-2j15xvznq-akanksha-37d2.vercel.app/"
+        "https://quicklink-url-shortener-fronted-gao3o7pjq-akanksha-37d2.vercel.app"
         "http://127.0.0.1:5500",
         "http://localhost:5500",
         "http://127.0.0.1:5501",
