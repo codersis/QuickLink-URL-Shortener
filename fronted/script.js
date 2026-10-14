@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:8001";
+const API_BASE_URL = "https://quick-link-url-shortener-xw4k-2j15xvznq-akanksha-37d2.vercel.app";
 
 // ========================================
 // 1. GET HTML ELEMENTS
